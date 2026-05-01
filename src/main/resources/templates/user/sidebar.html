@@ -1,0 +1,277 @@
+<!--<aside data-th-fragment="sidebar" id="logo-sidebar"-->
+<!--       class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-900 dark:border-gray-700 shadow-xl"-->
+<!--       aria-label="Sidebar">-->
+
+<!--  <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-900 flex flex-col justify-between">-->
+
+<!--    <div>-->
+<!--      <div class="mb-6 p-4 text-center rounded-2xl bg-slate-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">-->
+<!--        <div class="relative inline-block">-->
+<!--          <img onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/149/149071.png'"-->
+<!--               data-th-src="@{${loggedInUser.profilePic}}"-->
+<!--               class="w-20 h-20 mx-auto rounded-full ring-4 ring-blue-100 dark:ring-blue-900/30 object-cover shadow-sm"-->
+<!--               alt="Profile">-->
+<!--          <span class="absolute bottom-0 right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-gray-900 rounded-full shadow-sm"></span>-->
+<!--        </div>-->
+<!--        <h3 class="mt-3 font-bold text-gray-800 dark:text-gray-100 truncate px-2"-->
+<!--            data-th-text="${loggedInUser.name}">-->
+<!--          Kailash Kumar-->
+<!--        </h3>-->
+<!--        <p class="text-[11px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mt-1">-->
+<!--          Premium Member-->
+<!--        </p>-->
+<!--      </div>-->
+
+<!--      <ul class="space-y-2 font-medium">-->
+<!--        &lt;!&ndash; Dashboard &ndash;&gt;-->
+<!--        <li>-->
+<!--          <a data-th-href="@{/user/dashboard}"-->
+<!--             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">-->
+<!--            <i class="fa-solid fa-house-chimney w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>-->
+<!--            <span class="ms-3">Dashboard</span>-->
+<!--          </a>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash; All Contacts &ndash;&gt;-->
+<!--        <li>-->
+<!--          <a data-th-href="@{/user/contacts}"-->
+<!--             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">-->
+<!--            <i class="fa-solid fa-address-book w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>-->
+<!--            <span class="ms-3">All Contacts</span>-->
+<!--          </a>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash; Add Contact &ndash;&gt;-->
+<!--        <li>-->
+<!--          <a data-th-href="@{/user/contacts/add}"-->
+<!--             class="flex items-center justify-between p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">-->
+<!--            <div class="flex items-center">-->
+<!--              <i class="fa-solid fa-user-plus w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>-->
+<!--              <span class="ms-3">Add Contact</span>-->
+<!--            </div>-->
+<!--            <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-bold text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900/40 dark:text-blue-300">New</span>-->
+<!--          </a>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash; ================= NEW MENU ITEMS ================= &ndash;&gt;-->
+<!--        &lt;!&ndash; Projects (visible to both Admin and Member, but admin sees all, members see assigned) &ndash;&gt;-->
+<!--        <li>-->
+<!--          <a data-th-href="@{/user/projects}"-->
+<!--             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">-->
+<!--            <i class="fa-solid fa-diagram-project w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>-->
+<!--            <span class="ms-3">Projects</span>-->
+<!--          </a>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash; Tasks (visible to both) &ndash;&gt;-->
+<!--        <li>-->
+<!--          <a data-th-href="@{/user/tasks}"-->
+<!--             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">-->
+<!--            <i class="fa-regular fa-list-check w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>-->
+<!--            <span class="ms-3">My Tasks</span>-->
+<!--          </a>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash; Task Dashboard (visible to both) &ndash;&gt;-->
+<!--        <li>-->
+<!--          <a data-th-href="@{/user/task-dashboard}"-->
+<!--             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">-->
+<!--            <i class="fa-solid fa-chart-line w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>-->
+<!--            <span class="ms-3">Task Stats</span>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; ================================================= &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Profile &ndash;&gt;-->
+<!--        <li>-->
+<!--          <a data-th-href="@{/user/profile}"-->
+<!--             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">-->
+<!--            <i class="fa-solid fa-circle-user w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>-->
+<!--            <span class="ms-3">My Profile</span>-->
+<!--          </a>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash; Messages &ndash;&gt;-->
+<!--        <li>-->
+<!--          <a data-th-href="@{/user/messages}"-->
+<!--             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">-->
+<!--            <i class="fa-solid fa-envelope w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>-->
+<!--            <span class="ms-3">Messages</span>-->
+<!--          </a>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash; ========== ADMIN ONLY SECTION (visible only if user has ROLE_ADMIN) ========== &ndash;&gt;-->
+<!--        <li th:if="${loggedInUser.roleList != null and loggedInUser.roleList.contains('ROLE_ADMIN')}">-->
+<!--          <hr class="my-4 border-gray-200 dark:border-gray-700">-->
+<!--          <p class="px-3 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">Admin Area</p>-->
+<!--        </li>-->
+
+<!--        <li th:if="${loggedInUser.roleList != null and loggedInUser.roleList.contains('ROLE_ADMIN')}">-->
+<!--          <a data-th-href="@{/user/admin/dashboard}"-->
+<!--             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">-->
+<!--            <i class="fa-solid fa-gavel w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>-->
+<!--            <span class="ms-3">Admin Panel</span>-->
+<!--          </a>-->
+<!--        </li>-->
+
+<!--        <li th:if="${loggedInUser.roleList != null and loggedInUser.roleList.contains('ROLE_ADMIN')}">-->
+<!--          <a data-th-href="@{/user/admin/users}"-->
+<!--             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">-->
+<!--            <i class="fa-solid fa-users w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>-->
+<!--            <span class="ms-3">Manage Users</span>-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        &lt;!&ndash; ================================================= &ndash;&gt;-->
+
+<!--      </ul>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Logout Section &ndash;&gt;-->
+<!--    <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">-->
+<!--      <a data-th-href="@{/logout}"-->
+<!--         class="flex items-center justify-center gap-3 w-full px-4 py-3 bg-red-50 text-red-600 rounded-xl font-bold hover:bg-red-600 hover:text-white dark:bg-red-900/20 dark:text-red-400 dark:hover:bg-red-600 dark:hover:text-white transition-all duration-300 group">-->
+<!--        <i class="fa-solid fa-right-from-bracket group-hover:-translate-x-1 transition-transform"></i>-->
+<!--        <span>Logout Now</span>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</aside>-->
+
+<aside data-th-fragment="sidebar" id="logo-sidebar"
+       class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-900 dark:border-gray-700 shadow-xl"
+       aria-label="Sidebar">
+
+  <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-900 flex flex-col justify-between">
+
+    <div>
+      <div class="mb-6 p-4 text-center rounded-2xl bg-slate-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700">
+        <div class="relative inline-block">
+          <img onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/149/149071.png'"
+               data-th-src="@{${loggedInUser.profilePic}}"
+               class="w-20 h-20 mx-auto rounded-full ring-4 ring-blue-100 dark:ring-blue-900/30 object-cover shadow-sm"
+               alt="Profile">
+          <span class="absolute bottom-0 right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-gray-900 rounded-full shadow-sm"></span>
+        </div>
+        <h3 class="mt-3 font-bold text-gray-800 dark:text-gray-100 truncate px-2 break-words"
+            data-th-text="${loggedInUser.name}">
+          Kailash Kumar
+        </h3>
+        <p class="text-[11px] font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mt-1 break-words">
+          Team Member
+        </p>
+      </div>
+
+      <ul class="space-y-2 font-medium">
+        <!-- Dashboard -->
+        <li>
+          <a data-th-href="@{/user/dashboard}"
+             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">
+            <i class="fa-solid fa-house-chimney w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="ms-3 break-words">Dashboard</span>
+          </a>
+        </li>
+
+        <!-- All Contacts -->
+        <li>
+          <a data-th-href="@{/user/contacts}"
+             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">
+            <i class="fa-solid fa-address-book w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="ms-3 break-words">All Contacts</span>
+          </a>
+        </li>
+
+        <!-- Add Contact -->
+        <li>
+          <a data-th-href="@{/user/contacts/add}"
+             class="flex items-center justify-between p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">
+            <div class="flex items-center">
+              <i class="fa-solid fa-user-plus w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>
+              <span class="ms-3 break-words">Add Contact</span>
+            </div>
+            <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-bold text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900/40 dark:text-blue-300 break-words">New</span>
+          </a>
+        </li>
+
+        <!-- ================= NEW MENU ITEMS ================= -->
+        <!-- Projects -->
+        <li>
+          <a data-th-href="@{/user/projects}"
+             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">
+            <i class="fa-solid fa-diagram-project w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="ms-3 break-words">Projects</span>
+          </a>
+        </li>
+
+        <!-- Tasks -->
+        <li>
+          <a data-th-href="@{/user/tasks}"
+             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">
+            <i class="fa-regular fa-list-check w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="ms-3 break-words">My Tasks</span>
+          </a>
+        </li>
+
+        <!-- Task Dashboard -->
+        <li>
+          <a data-th-href="@{/user/task-dashboard}"
+             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">
+            <i class="fa-solid fa-chart-line w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="ms-3 break-words">Task Stats</span>
+          </a>
+        </li>
+        <!-- ================================================= -->
+
+        <!-- Profile -->
+        <li>
+          <a data-th-href="@{/user/profile}"
+             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">
+            <i class="fa-solid fa-circle-user w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="ms-3 break-words">My Profile</span>
+          </a>
+        </li>
+
+        <!-- Messages -->
+        <li>
+          <a data-th-href="@{/user/messages}"
+             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">
+            <i class="fa-solid fa-envelope w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="ms-3 break-words">Messages</span>
+          </a>
+        </li>
+
+        <!-- ========== ADMIN ONLY SECTION ========== -->
+        <li th:if="${loggedInUser.roleList != null and loggedInUser.roleList.contains('ROLE_ADMIN')}">
+          <hr class="my-4 border-gray-200 dark:border-gray-700">
+          <p class="px-3 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2 break-words">Admin Area</p>
+        </li>
+
+        <li th:if="${loggedInUser.roleList != null and loggedInUser.roleList.contains('ROLE_ADMIN')}">
+          <a data-th-href="@{/user/admin/dashboard}"
+             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">
+            <i class="fa-solid fa-gavel w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="ms-3 break-words">Admin Panel</span>
+          </a>
+        </li>
+
+        <li th:if="${loggedInUser.roleList != null and loggedInUser.roleList.contains('ROLE_ADMIN')}">
+          <a data-th-href="@{/user/admin/users}"
+             class="flex items-center p-3 text-gray-700 rounded-xl dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 group">
+            <i class="fa-solid fa-users w-6 text-center text-lg group-hover:scale-110 transition-transform"></i>
+            <span class="ms-3 break-words">Manage Users</span>
+          </a>
+        </li>
+        <!-- ================================================= -->
+
+      </ul>
+    </div>
+
+    <!-- Logout Section -->
+    <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
+      <a data-th-href="@{/logout}"
+         class="flex items-center justify-center gap-3 w-full px-4 py-3 bg-red-50 text-red-600 rounded-xl font-bold hover:bg-red-600 hover:text-white dark:bg-red-900/20 dark:text-red-400 dark:hover:bg-red-600 dark:hover:text-white transition-all duration-300 group">
+        <i class="fa-solid fa-right-from-bracket group-hover:-translate-x-1 transition-transform"></i>
+        <span class="break-words">Logout Now</span>
+      </a>
+    </div>
+  </div>
+</aside>

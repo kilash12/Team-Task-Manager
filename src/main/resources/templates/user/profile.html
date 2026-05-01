@@ -1,0 +1,214 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">-->
+<!--<head>-->
+<!--    <title data-th-text="${loggedInUser.name} + ' | Profile'">Profile | SCM 5.0</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div id="content">-->
+<!--    <div class="py-8 min-h-screen">-->
+<!--        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">-->
+
+<!--            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden relative">-->
+
+<!--                <div class="h-32 sm:h-48 w-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600"></div>-->
+
+<!--                <div class="px-6 sm:px-10 pb-10">-->
+<!--                    <div class="flex flex-col items-center text-center">-->
+
+<!--                        <div class="relative -mt-16 sm:-mt-20 mb-4">-->
+<!--                            <img-->
+<!--                                    data-th-src="@{${loggedInUser.profilePic}}"-->
+<!--                                    src="/images/logo.png"-->
+<!--                                    alt="Profile Photo"-->
+<!--                                    class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 sm:border-8 border-white dark:border-gray-800 shadow-lg bg-white dark:bg-gray-800"-->
+<!--                                    onerror="this.onerror=null; this.src='/images/logo.png'"-->
+<!--                            />-->
+<!--                            <div class="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-green-500 rounded-full w-5 h-5 sm:w-6 sm:h-6 border-4 border-white dark:border-gray-800 shadow-sm" title="Active"></div>-->
+<!--                        </div>-->
+
+<!--                        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight" data-th-text="${loggedInUser.name}">-->
+<!--                            User Name-->
+<!--                        </h2>-->
+<!--                        <p class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mt-1">SCM Member</p>-->
+
+<!--                        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mt-4 text-sm font-medium text-gray-600 dark:text-gray-300">-->
+<!--                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-700/50 rounded-full border border-gray-100 dark:border-gray-600">-->
+<!--                                <i class="fa-regular fa-envelope text-gray-400"></i>-->
+<!--                                <span data-th-text="${loggedInUser.email}">user@example.com</span>-->
+<!--                            </div>-->
+<!--                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-700/50 rounded-full border border-gray-100 dark:border-gray-600">-->
+<!--                                <i class="fa-solid fa-phone text-gray-400"></i>-->
+<!--                                <span data-th-text="${loggedInUser.phoneNumber ?: 'No phone added'}">+1 234 567 890</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="mt-6 p-5 bg-blue-50/50 dark:bg-gray-900/30 rounded-2xl border border-blue-100 dark:border-gray-700 max-w-2xl w-full">-->
+<!--                            <h3 class="text-sm font-bold text-gray-900 dark:text-white mb-2 flex items-center justify-center gap-2">-->
+<!--                                <i class="fa-solid fa-circle-info text-blue-500"></i> About Me-->
+<!--                            </h3>-->
+<!--                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed" data-th-text="${loggedInUser.about ?: 'Hey there! I am using Smart Contact Manager.'}">-->
+<!--                                A short description about the user.-->
+<!--                            </p>-->
+<!--                        </div>-->
+
+<!--                        <div class="flex flex-wrap justify-center gap-4 mt-8 pt-6 border-t border-gray-100 dark:border-gray-700 w-full max-w-2xl">-->
+
+<!--                            <div class="flex items-center gap-2 px-4 py-2 rounded-xl border transition-colors"-->
+<!--                                 data-th-classappend="${loggedInUser.emailVerified} ? 'bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800' : 'bg-red-50 border-red-200 dark:bg-red-900/20 dark:border-red-800'">-->
+<!--                                <i data-th-classappend="${loggedInUser.emailVerified} ? 'fa-solid fa-circle-check text-green-500' : 'fa-solid fa-circle-xmark text-red-500'"></i>-->
+<!--                                <div class="text-left">-->
+<!--                                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Email Status</p>-->
+<!--                                    <p class="text-sm font-bold"-->
+<!--                                       data-th-classappend="${loggedInUser.emailVerified} ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'"-->
+<!--                                       data-th-text="${loggedInUser.emailVerified ? 'Verified' : 'Unverified'}">-->
+<!--                                        Verified-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div class="flex items-center gap-2 px-4 py-2 rounded-xl border transition-colors"-->
+<!--                                 data-th-classappend="${loggedInUser.phoneVerified} ? 'bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800' : 'bg-red-50 border-red-200 dark:bg-red-900/20 dark:border-red-800'">-->
+<!--                                <i data-th-classappend="${loggedInUser.phoneVerified} ? 'fa-solid fa-circle-check text-green-500' : 'fa-solid fa-circle-xmark text-red-500'"></i>-->
+<!--                                <div class="text-left">-->
+<!--                                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Phone Status</p>-->
+<!--                                    <p class="text-sm font-bold"-->
+<!--                                       data-th-classappend="${loggedInUser.phoneVerified} ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'"-->
+<!--                                       data-th-text="${loggedInUser.phoneVerified ? 'Verified' : 'Unverified'}">-->
+<!--                                        Unverified-->
+<!--                                    </p>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+
+<!--                        <div class="mt-8">-->
+<!--                            <a href="/user/profile/edit"-->
+<!--                               class="inline-flex items-center px-8 py-3 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all shadow-lg hover:-translate-y-0.5">-->
+<!--                                <i class="fa-solid fa-user-pen mr-2"></i> Update Profile-->
+<!--                            </a>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    document.addEventListener('DOMContentLoaded', () => {-->
+<!--        console.log("Profile page loaded successfully!");-->
+<!--    });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title data-th-text="${loggedInUser.name} + ' | Profile'">Profile | Team Task Manager</title>
+</head>
+<body>
+
+<div id="content">
+    <div class="py-8 min-h-screen">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden relative">
+
+                <div class="h-32 sm:h-48 w-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600"></div>
+
+                <div class="px-6 sm:px-10 pb-10">
+                    <div class="flex flex-col items-center text-center">
+
+                        <div class="relative -mt-16 sm:-mt-20 mb-4">
+                            <img
+                                    data-th-src="@{${loggedInUser.profilePic}}"
+                                    src="/images/logo.png"
+                                    alt="Profile Photo"
+                                    class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border-4 sm:border-8 border-white dark:border-gray-800 shadow-lg bg-white dark:bg-gray-800"
+                                    onerror="this.onerror=null; this.src='/images/logo.png'"
+                            />
+                            <div class="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-green-500 rounded-full w-5 h-5 sm:w-6 sm:h-6 border-4 border-white dark:border-gray-800 shadow-sm" title="Active"></div>
+                        </div>
+
+                        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight break-words" data-th-text="${loggedInUser.name}">
+                            User Name
+                        </h2>
+                        <p class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mt-1 break-words">Team Member</p>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mt-4 text-sm font-medium text-gray-600 dark:text-gray-300">
+                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-700/50 rounded-full border border-gray-100 dark:border-gray-600 break-words">
+                                <i class="fa-regular fa-envelope text-gray-400"></i>
+                                <span data-th-text="${loggedInUser.email}">user@example.com</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-700/50 rounded-full border border-gray-100 dark:border-gray-600 break-words">
+                                <i class="fa-solid fa-phone text-gray-400"></i>
+                                <span data-th-text="${loggedInUser.phoneNumber ?: 'No phone added'}">+1 234 567 890</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-5 bg-blue-50/50 dark:bg-gray-900/30 rounded-2xl border border-blue-100 dark:border-gray-700 max-w-2xl w-full">
+                            <h3 class="text-sm font-bold text-gray-900 dark:text-white mb-2 flex items-center justify-center gap-2 break-words">
+                                <i class="fa-solid fa-circle-info text-blue-500"></i> About Me
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed break-words" data-th-text="${loggedInUser.about ?: 'Hey there! I am using Team Task Manager.'}">
+                                A short description about the user.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap justify-center gap-4 mt-8 pt-6 border-t border-gray-100 dark:border-gray-700 w-full max-w-2xl">
+
+                            <div class="flex items-center gap-2 px-4 py-2 rounded-xl border transition-colors"
+                                 data-th-classappend="${loggedInUser.emailVerified} ? 'bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800' : 'bg-red-50 border-red-200 dark:bg-red-900/20 dark:border-red-800'">
+                                <i data-th-classappend="${loggedInUser.emailVerified} ? 'fa-solid fa-circle-check text-green-500' : 'fa-solid fa-circle-xmark text-red-500'"></i>
+                                <div class="text-left">
+                                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider break-words">Email Status</p>
+                                    <p class="text-sm font-bold break-words"
+                                       data-th-classappend="${loggedInUser.emailVerified} ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'"
+                                       data-th-text="${loggedInUser.emailVerified ? 'Verified' : 'Unverified'}">
+                                        Verified
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2 px-4 py-2 rounded-xl border transition-colors"
+                                 data-th-classappend="${loggedInUser.phoneVerified} ? 'bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800' : 'bg-red-50 border-red-200 dark:bg-red-900/20 dark:border-red-800'">
+                                <i data-th-classappend="${loggedInUser.phoneVerified} ? 'fa-solid fa-circle-check text-green-500' : 'fa-solid fa-circle-xmark text-red-500'"></i>
+                                <div class="text-left">
+                                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider break-words">Phone Status</p>
+                                    <p class="text-sm font-bold break-words"
+                                       data-th-classappend="${loggedInUser.phoneVerified} ? 'text-green-700 dark:text-green-400' : 'text-red-700 dark:text-red-400'"
+                                       data-th-text="${loggedInUser.phoneVerified ? 'Verified' : 'Unverified'}">
+                                        Unverified
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-8">
+                            <a href="/user/profile/edit"
+                               class="inline-flex items-center px-8 py-3 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all shadow-lg hover:-translate-y-0.5 break-words">
+                                <i class="fa-solid fa-user-pen mr-2"></i> Update Profile
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log("Profile page loaded successfully!");
+    });
+</script>
+</body>
+</html>

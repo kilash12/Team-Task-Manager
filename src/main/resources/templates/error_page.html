@@ -1,0 +1,163 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">-->
+<!--<head>-->
+<!--  <title>Home | SCM 2.0</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div id="content">-->
+
+<!--  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 absolute top-20 left-0 right-0 z-50">-->
+<!--    <div data-th-replace="~{message :: messagebox}"></div>-->
+<!--  </div>-->
+
+<!--  <section class="relative bg-white dark:bg-gray-900 min-h-[85vh] flex items-center justify-center overflow-hidden transition-colors duration-300">-->
+
+<!--    <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full overflow-hidden -z-10 pointer-events-none">-->
+<!--      <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10 animate-blob"></div>-->
+<!--      <div class="absolute top-40 -left-40 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10 animate-blob animation-delay-2000"></div>-->
+<!--      <div class="absolute -bottom-40 left-1/2 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10 animate-blob animation-delay-4000"></div>-->
+<!--    </div>-->
+
+<!--    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-16">-->
+
+<!--      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-bold uppercase tracking-wider mb-8 border border-blue-100 dark:border-blue-800">-->
+<!--        <span class="flex w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>-->
+<!--        Welcome to SCM 2.0-->
+<!--      </div>-->
+
+<!--      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6 leading-tight">-->
+<!--        Manage Your Contacts <br class="hidden sm:block" />-->
+<!--        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">-->
+<!--                    Smarter & Faster-->
+<!--                </span>-->
+<!--      </h1>-->
+
+<!--      <p class="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">-->
+<!--        Your personal cloud-based directory. Securely store, organize, and access all your important connections from anywhere, at any time.-->
+<!--      </p>-->
+
+<!--      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">-->
+
+<!--        <a data-th-href="@{/register}"-->
+<!--           class="w-full sm:w-auto px-8 py-4 text-lg font-bold text-white bg-blue-600 rounded-2xl hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">-->
+<!--          Get Started Free <i class="fa-solid fa-arrow-right"></i>-->
+<!--        </a>-->
+
+<!--        <a data-th-href="@{/login}"-->
+<!--           class="w-full sm:w-auto px-8 py-4 text-lg font-bold text-gray-900 bg-white border-2 border-gray-200 rounded-2xl hover:bg-gray-50 hover:border-gray-300 hover:-translate-y-1 transition-all duration-300 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:border-gray-600 flex items-center justify-center gap-2 shadow-sm">-->
+<!--          <i class="fa-solid fa-right-to-bracket"></i> Login to Account-->
+<!--        </a>-->
+
+<!--      </div>-->
+
+<!--      <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">-->
+<!--        <div>-->
+<!--          <h3 class="text-3xl font-extrabold text-gray-900 dark:text-white">100%</h3>-->
+<!--          <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide">Secure Cloud</p>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <h3 class="text-3xl font-extrabold text-gray-900 dark:text-white">24/7</h3>-->
+<!--          <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide">Accessibility</p>-->
+<!--        </div>-->
+<!--        <div class="col-span-2 md:col-span-1">-->
+<!--          <h3 class="text-3xl font-extrabold text-gray-900 dark:text-white">Free</h3>-->
+<!--          <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide">To Get Started</p>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </section>-->
+
+<!--</div>-->
+
+<!--<script>-->
+<!--  document.addEventListener("DOMContentLoaded", () => {-->
+<!--      console.log("SCM 2.0 Home page loaded successfully!");-->
+<!--  });-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+  <title>Home | SCM 2.0</title>
+</head>
+<body>
+
+<div id="content">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 absolute top-20 left-0 right-0 z-50">
+    <div data-th-replace="~{message :: messagebox}"></div>
+  </div>
+
+  <section class="relative bg-white dark:bg-gray-900 min-h-[85vh] flex items-center justify-center overflow-hidden transition-colors duration-300">
+
+    <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full overflow-hidden -z-10 pointer-events-none">
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10 animate-blob"></div>
+      <div class="absolute top-40 -left-40 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10 animate-blob animation-delay-2000"></div>
+      <div class="absolute -bottom-40 left-1/2 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-16">
+
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-sm font-bold uppercase tracking-wider mb-8 border border-blue-100 dark:border-blue-800 break-words">
+        <span class="flex w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+        Welcome to SCM 2.0
+      </div>
+
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6 leading-tight break-words">
+        Manage Your Contacts <br class="hidden sm:block" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+                    Smarter & Faster
+                </span>
+      </h1>
+
+      <p class="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed font-medium break-words">
+        Your personal cloud-based directory. Securely store, organize, and access all your important connections from anywhere, at any time.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
+
+        <a data-th-href="@{/register}"
+           class="w-full sm:w-auto px-8 py-4 text-lg font-bold text-white bg-blue-600 rounded-2xl hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
+          Get Started Free <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a data-th-href="@{/login}"
+           class="w-full sm:w-auto px-8 py-4 text-lg font-bold text-gray-900 bg-white border-2 border-gray-200 rounded-2xl hover:bg-gray-50 hover:border-gray-300 hover:-translate-y-1 transition-all duration-300 dark:bg-gray-800 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:hover:border-gray-600 flex items-center justify-center gap-2 shadow-sm">
+          <i class="fa-solid fa-right-to-bracket"></i> Login to Account
+        </a>
+
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <div>
+          <h3 class="text-3xl font-extrabold text-gray-900 dark:text-white break-words">100%</h3>
+          <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide break-words">Secure Cloud</p>
+        </div>
+        <div>
+          <h3 class="text-3xl font-extrabold text-gray-900 dark:text-white break-words">24/7</h3>
+          <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide break-words">Accessibility</p>
+        </div>
+        <div class="col-span-2 md:col-span-1">
+          <h3 class="text-3xl font-extrabold text-gray-900 dark:text-white break-words">Free</h3>
+          <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-wide break-words">To Get Started</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      console.log("SCM 2.0 Home page loaded successfully!");
+  });
+</script>
+
+</body>
+</html>

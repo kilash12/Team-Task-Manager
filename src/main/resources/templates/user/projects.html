@@ -1,0 +1,83 @@
+<!--<!DOCTYPE html>-->
+<!--<html th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">-->
+<!--<head>-->
+<!--    <title>My Projects | SCM 5.0</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="content">-->
+<!--    <div th:replace="~{user/sidebar :: sidebar}"></div>-->
+<!--    <div class="sm:pl-64 pt-20 p-6">-->
+<!--        <div class="max-w-7xl mx-auto">-->
+<!--            <div class="flex justify-between items-center mb-6">-->
+<!--                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">My Projects</h1>-->
+<!--                <a th:href="@{/user/projects/create}"-->
+<!--                   class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl shadow transition">-->
+<!--                    + Create Project-->
+<!--                </a>-->
+<!--            </div>-->
+
+<!--            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">-->
+<!--                <div th:each="p : ${projects}" class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-5 border border-gray-200 dark:border-gray-700">-->
+<!--                    <h2 class="text-xl font-bold text-gray-900 dark:text-white" th:text="${p.name}">Project Name</h2>-->
+<!--                    <p class="text-gray-600 dark:text-gray-400 mt-2" th:text="${p.description}">Description</p>-->
+<!--                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">-->
+<!--                        <i class="fa-regular fa-user"></i> Created by: <span th:text="${p.createdBy.name}">Admin</span>-->
+<!--                    </p>-->
+<!--                    <div class="mt-4 flex flex-wrap gap-2">-->
+<!--                        <a th:href="@{'/user/projects/' + ${p.id} + '/add-member'}"-->
+<!--                           class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600">+ Add Member</a>-->
+<!--                        <a th:href="@{'/user/tasks?projectId=' + ${p.id}}"-->
+<!--                           class="text-sm bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-lg text-blue-700 dark:text-blue-300">View Tasks</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div th:if="${projects.empty}" class="text-center py-12 text-gray-500 dark:text-gray-400">-->
+<!--                No projects yet. Click "Create Project" to start.-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>My Projects | Team Task Manager</title>
+</head>
+<body>
+<div id="content">
+    <div th:replace="~{user/sidebar :: sidebar}"></div>
+    <div class="sm:pl-64 pt-20 p-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white break-words">My Projects</h1>
+                <a th:href="@{/user/projects/create}"
+                   class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl shadow transition break-words">
+                    + Create Project
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div th:each="p : ${projects}" class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-5 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white break-words" th:text="${p.name}">Project Name</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mt-2 break-words" th:text="${p.description}">Description</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-3 break-words">
+                        <i class="fa-regular fa-user"></i> Created by: <span th:text="${p.createdBy.name}">Admin</span>
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <a th:href="@{'/user/projects/' + ${p.id} + '/add-member'}"
+                           class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors break-words">+ Add Member</a>
+                        <a th:href="@{'/user/tasks?projectId=' + ${p.id}}"
+                           class="text-sm bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-lg text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors break-words">View Tasks</a>
+                    </div>
+                </div>
+            </div>
+            <div th:if="${projects.empty}" class="text-center py-12 text-gray-500 dark:text-gray-400 break-words">
+                No projects yet. Click "Create Project" to start.
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

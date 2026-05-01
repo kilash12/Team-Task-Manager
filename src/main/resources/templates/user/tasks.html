@@ -1,0 +1,125 @@
+<!--<!DOCTYPE html>-->
+<!--<html th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">-->
+<!--<head>-->
+<!--    <title>My Tasks | SCM 5.0</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="content">-->
+<!--    <div th:replace="~{user/sidebar :: sidebar}"></div>-->
+<!--    <div class="sm:pl-64 pt-20 p-6">-->
+<!--        <div class="max-w-6xl mx-auto">-->
+<!--            <div class="flex justify-between items-center mb-6">-->
+<!--                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Tasks</h1>-->
+<!--                <a th:if="${loggedInUser.roleList.contains('ROLE_ADMIN')}"-->
+<!--                   th:href="@{/user/tasks/create}"-->
+<!--                   class="bg-blue-600 text-white px-5 py-2 rounded-xl shadow">+ New Task</a>-->
+<!--            </div>-->
+
+<!--            <div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-2xl shadow border border-gray-200 dark:border-gray-700">-->
+<!--                <table class="min-w-full text-sm">-->
+<!--                    <thead class="bg-gray-50 dark:bg-gray-700">-->
+<!--                    <tr><th class="px-6 py-3 text-left text-gray-700 dark:text-gray-300">Title</th>-->
+<!--                        <th class="px-6 py-3 text-left">Project</th>-->
+<!--                        <th class="px-6 py-3 text-left">Assigned To</th>-->
+<!--                        <th class="px-6 py-3 text-left">Due Date</th>-->
+<!--                        <th class="px-6 py-3 text-left">Status</th>-->
+<!--                        <th class="px-6 py-3 text-left">Action</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                    <tr th:each="t : ${tasks}" class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">-->
+<!--                        <td class="px-6 py-4 font-medium text-gray-900 dark:text-white" th:text="${t.title}">Title</td>-->
+<!--                        <td class="px-6 py-4 text-gray-600 dark:text-gray-300" th:text="${t.project.name}">Project</td>-->
+<!--                        <td class="px-6 py-4 text-gray-600 dark:text-gray-300" th:text="${t.assignedTo.name}">User</td>-->
+<!--                        <td class="px-6 py-4 text-gray-600 dark:text-gray-300" th:text="${#temporals.format(t.dueDate, 'dd/MM/yyyy')}">Date</td>-->
+<!--                        <td class="px-6 py-4">-->
+<!--                                <span th:classappend="${t.status == 'TODO'} ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' :-->
+<!--                                                           ${t.status == 'IN_PROGRESS'} ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' :-->
+<!--                                                           'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'"-->
+<!--                                      class="px-3 py-1 rounded-full text-xs font-semibold" th:text="${t.status}">Status</span>-->
+<!--                        </td>-->
+<!--                        <td class="px-6 py-4">-->
+<!--                            <form th:action="@{'/user/tasks/' + ${t.id} + '/status'}" method="post" class="flex gap-2">-->
+<!--                                <select name="status" onchange="this.form.submit()" class="text-sm rounded-lg border dark:bg-gray-700">-->
+<!--                                    <option value="TODO">TODO</option>-->
+<!--                                    <option value="IN_PROGRESS">IN_PROGRESS</option>-->
+<!--                                    <option value="DONE">DONE</option>-->
+<!--                                </select>-->
+<!--                            </form>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--                <div th:if="${tasks.empty}" class="text-center py-12 text-gray-500 dark:text-gray-400">-->
+<!--                    No tasks assigned.-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>My Tasks | Team Task Manager</title>
+</head>
+<body>
+<div id="content">
+    <div th:replace="~{user/sidebar :: sidebar}"></div>
+    <div class="sm:pl-64 pt-20 p-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white break-words">Tasks</h1>
+                <a th:if="${loggedInUser.roleList != null and loggedInUser.roleList.contains('ROLE_ADMIN')}"
+                   th:href="@{/user/tasks/create}"
+                   class="bg-blue-600 text-white px-5 py-2 rounded-xl shadow transition hover:bg-blue-700 break-words">+ New Task</a>
+            </div>
+
+            <div class="overflow-x-auto bg-white dark:bg-gray-800 rounded-2xl shadow border border-gray-200 dark:border-gray-700">
+                <table class="min-w-full text-sm">
+                    <thead class="bg-gray-50 dark:bg-gray-700">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-gray-700 dark:text-gray-300 break-words">Title</th>
+                        <th class="px-6 py-3 text-left text-gray-700 dark:text-gray-300 break-words">Project</th>
+                        <th class="px-6 py-3 text-left text-gray-700 dark:text-gray-300 break-words">Assigned To</th>
+                        <th class="px-6 py-3 text-left text-gray-700 dark:text-gray-300 break-words">Due Date</th>
+                        <th class="px-6 py-3 text-left text-gray-700 dark:text-gray-300 break-words">Status</th>
+                        <th class="px-6 py-3 text-left text-gray-700 dark:text-gray-300 break-words">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="t : ${tasks}" class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                        <td class="px-6 py-4 font-medium text-gray-900 dark:text-white break-words" th:text="${t.title}">Title</td>
+                        <td class="px-6 py-4 text-gray-600 dark:text-gray-300 break-words" th:text="${t.project.name}">Project</td>
+                        <td class="px-6 py-4 text-gray-600 dark:text-gray-300 break-words" th:text="${t.assignedTo.name}">User</td>
+                        <td class="px-6 py-4 text-gray-600 dark:text-gray-300 break-words" th:text="${#temporals.format(t.dueDate, 'dd/MM/yyyy')}">Date</td>
+                        <td class="px-6 py-4">
+                                <span th:classappend="${t.status == 'TODO'} ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300' :
+                                                                   ${t.status == 'IN_PROGRESS'} ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' :
+                                                                   'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'"
+                                      class="px-3 py-1 rounded-full text-xs font-semibold break-words" th:text="${t.status}">Status</span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <form th:action="@{'/user/tasks/' + ${t.id} + '/status'}" method="post" class="flex gap-2">
+                                <select name="status" onchange="this.form.submit()"
+                                        class="text-sm rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 focus:ring-blue-500 focus:border-blue-500 transition-all">
+                                    <option value="TODO" th:selected="${t.status == 'TODO'}">TODO</option>
+                                    <option value="IN_PROGRESS" th:selected="${t.status == 'IN_PROGRESS'}">IN_PROGRESS</option>
+                                    <option value="DONE" th:selected="${t.status == 'DONE'}">DONE</option>
+                                </select>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div th:if="${tasks.empty}" class="text-center py-12 text-gray-500 dark:text-gray-400 break-words">
+                    No tasks assigned.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

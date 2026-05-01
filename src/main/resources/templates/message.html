@@ -1,0 +1,110 @@
+<!--<div-->
+<!--        data-th-if="${session.message}"-->
+<!--        data-th-object="${session.message}"-->
+<!--        data-th-fragment="messagebox"-->
+<!--        id="alert-messagebox"-->
+<!--        data-th-classappend="*{'text-'+type+'-800 border border-'+type+'-200 bg-'+type+'-50 dark:bg-gray-800 dark:text-'+type+'-400 dark:border-'+type+'-800/50'}"-->
+<!--        class="flex items-center justify-between p-4 mb-6 text-sm rounded-xl shadow-md transition-all duration-300 animate-fade-in-down"-->
+<!--        role="alert"-->
+<!--&gt;-->
+<!--  <div class="flex items-center gap-3">-->
+
+<!--    <div data-th-classappend="*{'bg-'+type+'-100 dark:bg-gray-700 text-'+type+'-600 dark:text-'+type+'-400'}"-->
+<!--         class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg">-->
+<!--      <svg-->
+<!--              class="w-4 h-4"-->
+<!--              aria-hidden="true"-->
+<!--              xmlns="http://www.w3.org/2000/svg"-->
+<!--              fill="currentColor"-->
+<!--              viewBox="0 0 20 20"-->
+<!--      >-->
+<!--        <path-->
+<!--                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"-->
+<!--        />-->
+<!--      </svg>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--      <span class="sr-only">Notification</span>-->
+<!--      <span class="font-semibold tracking-wide" data-th-text="*{content}"></span>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <button type="button"-->
+<!--          onclick="document.getElementById('alert-messagebox').style.display='none'"-->
+<!--          data-th-classappend="*{'text-'+type+'-500 hover:bg-'+type+'-100 dark:text-'+type+'-400 dark:hover:bg-gray-700 focus:ring-'+type+'-400'}"-->
+<!--          class="ms-auto -mx-1.5 -my-1.5 rounded-lg focus:ring-2 p-1.5 inline-flex items-center justify-center h-8 w-8 transition-colors"-->
+<!--          aria-label="Close">-->
+<!--    <span class="sr-only">Close alert</span>-->
+<!--    <i class="fa-solid fa-xmark text-lg"></i>-->
+<!--  </button>-->
+
+<!--  <th:block th:text="${@sessionHelper.removeMessage()}"></th:block>-->
+
+<!--</div>-->
+
+<!--<style>-->
+<!--  @keyframes fadeInDown {-->
+<!--    0% { opacity: 0; transform: translateY(-10px); }-->
+<!--    100% { opacity: 1; transform: translateY(0); }-->
+<!--  }-->
+<!--  .animate-fade-in-down {-->
+<!--    animation: fadeInDown 0.4s ease-out forwards;-->
+<!--  }-->
+<!--</style>-->
+
+
+<div
+        data-th-if="${session.message}"
+        data-th-object="${session.message}"
+        data-th-fragment="messagebox"
+        id="alert-messagebox"
+        data-th-classappend="*{'text-'+type+'-800 border border-'+type+'-200 bg-'+type+'-50 dark:bg-gray-800 dark:text-'+type+'-400 dark:border-'+type+'-800/50'}"
+        class="flex items-center justify-between p-4 mb-6 text-sm rounded-xl shadow-md transition-all duration-300 animate-fade-in-down"
+        role="alert"
+>
+  <div class="flex items-center gap-3">
+
+    <div data-th-classappend="*{'bg-'+type+'-100 dark:bg-gray-700 text-'+type+'-600 dark:text-'+type+'-400'}"
+         class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg">
+      <svg
+              class="w-4 h-4"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+      >
+        <path
+                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+        />
+      </svg>
+    </div>
+
+    <div>
+      <span class="sr-only">Notification</span>
+      <span class="font-semibold tracking-wide break-words" data-th-text="*{content}"></span>
+    </div>
+  </div>
+
+  <button type="button"
+          onclick="document.getElementById('alert-messagebox').style.display='none'"
+          data-th-classappend="*{'text-'+type+'-500 hover:bg-'+type+'-100 dark:text-'+type+'-400 dark:hover:bg-gray-700 focus:ring-'+type+'-400'}"
+          class="ms-auto -mx-1.5 -my-1.5 rounded-lg focus:ring-2 p-1.5 inline-flex items-center justify-center h-8 w-8 transition-colors"
+          aria-label="Close">
+    <span class="sr-only">Close alert</span>
+    <i class="fa-solid fa-xmark text-lg dark:text-gray-300"></i>
+  </button>
+
+  <th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
+
+</div>
+
+<style>
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-down {
+    animation: fadeInDown 0.4s ease-out forwards;
+  }
+</style>

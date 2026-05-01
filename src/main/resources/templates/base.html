@@ -1,0 +1,122 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" class="scroll-smooth" xmlns:th="http://www.thymeleaf.org"-->
+<!--      th:fragment="parent(content,title,script)">-->
+
+<!--<head>-->
+<!--  <meta charset="UTF-8" />-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+
+<!--  <title th:replace="${title}">SCM 5.0</title>-->
+
+<!--  <script>-->
+<!--    const theme = localStorage.getItem("theme") || (window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light");-->
+<!--    document.documentElement.classList.remove("light", "dark");-->
+<!--    document.documentElement.classList.add(theme);-->
+<!--  </script>-->
+
+<!--  <link rel="stylesheet" th:href="@{/css/output.css}" />-->
+<!--  <link rel="stylesheet" th:href="@{/css/style.css}" />-->
+
+<!--  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />-->
+
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />-->
+<!--</head>-->
+
+<!--<body class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100 transition-colors duration-300">-->
+
+<!--<header class="fixed top-0 z-50 w-full">-->
+<!--  <div th:if="${loggedInUser}">-->
+<!--    <div th:replace="~{user/user_navbar :: user-navbar}"></div>-->
+<!--    <div th:replace="~{user/sidebar :: sidebar}"></div>-->
+<!--  </div>-->
+<!--  <div th:unless="${loggedInUser}">-->
+<!--    <div th:replace="~{navbar :: navbar}"></div>-->
+<!--  </div>-->
+<!--</header>-->
+
+<!--<main th:classappend="${loggedInUser} ? 'sm:ml-64' : ''"-->
+<!--      class="flex-1 pt-24 pb-12 px-4 transition-all duration-300 dark:bg-gray-950">-->
+
+<!--  <div class="max-w-screen-2xl mx-auto min-h-screen">-->
+<!--    <th:block th:replace="${content}" />-->
+<!--  </div>-->
+
+<!--</main>-->
+
+<!--<footer th:classappend="${loggedInUser} ? 'sm:ml-64' : ''"-->
+<!--        class="mt-auto bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-all duration-300">-->
+<!--  <div class="max-w-screen-xl mx-auto px-6 py-8 text-center text-sm text-gray-500 dark:text-gray-400">-->
+<!--    © 2026 <span class="font-semibold text-blue-600 dark:text-blue-400">SCM 5.0</span> – Smart Contact Manager. Build with Spring Boot & Tailwind.-->
+<!--  </div>-->
+<!--</footer>-->
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>-->
+<!--<script th:src="@{/js/script.js}"></script>-->
+
+<!--<th:block th:replace="${script}" />-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" xmlns:th="http://www.thymeleaf.org"
+      th:fragment="parent(content,title,script)">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title th:replace="${title}">SCM 5.0</title>
+
+  <script>
+    const theme = localStorage.getItem("theme") || (window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light");
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+  </script>
+
+  <link rel="stylesheet" th:href="@{/css/output.css}" />
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100 transition-colors duration-300">
+
+<header class="fixed top-0 z-50 w-full">
+  <div th:if="${loggedInUser}">
+    <div th:replace="~{user/user_navbar :: user-navbar}"></div>
+    <div th:replace="~{user/sidebar :: sidebar}"></div>
+  </div>
+  <div th:unless="${loggedInUser}">
+    <div th:replace="~{navbar :: navbar}"></div>
+  </div>
+</header>
+
+<main th:classappend="${loggedInUser} ? 'sm:ml-64' : ''"
+      class="flex-1 pt-24 pb-12 px-4 transition-all duration-300 dark:bg-gray-950">
+
+  <div class="max-w-screen-2xl mx-auto min-h-screen break-words">
+    <th:block th:replace="${content}" />
+  </div>
+
+</main>
+
+<footer th:classappend="${loggedInUser} ? 'sm:ml-64' : ''"
+        class="mt-auto bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-all duration-300">
+  <div class="max-w-screen-xl mx-auto px-6 py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+    © 2026 <span class="font-semibold text-blue-600 dark:text-blue-400">SCM 5.0</span> – Smart Contact Manager. Build with Spring Boot & Tailwind.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script th:src="@{/js/script.js}"></script>
+
+<th:block th:replace="${script}" />
+
+</body>
+</html>

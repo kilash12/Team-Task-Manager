@@ -1,0 +1,348 @@
+<!--<div data-th-fragment="contact">-->
+<!--  <div id="view_contact_modal" tabindex="-1" aria-hidden="true"-->
+<!--       class="hidden fixed inset-0 z-50 items-center justify-center w-full h-full bg-gray-900/50 dark:bg-gray-900/80 backdrop-blur-sm transition-all duration-300 opacity-0">-->
+
+<!--    <div class="relative p-4 w-full max-w-lg transform transition-all duration-300 scale-95" id="modal_content_card">-->
+
+<!--      <div class="relative bg-white rounded-2xl shadow-2xl dark:bg-gray-800 border border-gray-100 dark:border-gray-700 overflow-hidden">-->
+
+<!--        <button type="button" onclick="closeContactModal()"-->
+<!--                class="absolute top-4 right-4 z-10 text-gray-400 bg-white/50 dark:bg-gray-800/50 hover:bg-gray-100 hover:text-gray-900 rounded-full text-sm w-8 h-8 flex justify-center items-center dark:hover:bg-gray-700 dark:hover:text-white transition-colors">-->
+<!--          <i class="fa-solid fa-xmark text-lg"></i>-->
+<!--          <span class="sr-only">Close modal</span>-->
+<!--        </button>-->
+
+<!--        <div class="flex flex-col items-center pt-8 pb-4 px-6 border-b border-gray-100 dark:border-gray-700 bg-slate-50 dark:bg-gray-800/50">-->
+<!--          <div class="relative group">-->
+<!--            <img id="contact_image"-->
+<!--                 class="w-24 h-24 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-md transition-transform group-hover:scale-105"-->
+<!--                 src=""-->
+<!--                 alt="Contact avatar"-->
+<!--                 onerror="this.onerror=null; this.src='/images/logo.png'">-->
+<!--            <div class="absolute bottom-1 right-1 bg-green-500 rounded-full w-5 h-5 border-4 border-white dark:border-gray-800"></div>-->
+<!--          </div>-->
+<!--          <h3 id="contact_name" class="mt-4 text-2xl font-bold text-gray-900 dark:text-white tracking-tight text-center"></h3>-->
+<!--          <div class="flex flex-col items-center mt-1 space-y-1">-->
+<!--            <p id="contact_email" class="text-sm font-medium text-gray-500 dark:text-gray-400 flex items-center gap-2">-->
+<!--              <i class="fa-regular fa-envelope"></i> <span></span>-->
+<!--            </p>-->
+<!--            <p id="contact_phone" class="text-sm font-medium text-gray-500 dark:text-gray-400 flex items-center gap-2">-->
+<!--              <i class="fa-solid fa-phone"></i> <span></span>-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="p-6 space-y-4 max-h-[50vh] overflow-y-auto custom-scrollbar">-->
+
+<!--          <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">-->
+<!--            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 shrink-0">-->
+<!--              <i class="fa-solid fa-location-dot"></i>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--              <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Address</p>-->
+<!--              <p id="contact_address" class="text-sm text-gray-800 dark:text-gray-200 mt-0.5 leading-relaxed"></p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">-->
+<!--            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 shrink-0">-->
+<!--              <i class="fa-solid fa-circle-info"></i>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--              <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">About</p>-->
+<!--              <p id="contact_about" class="text-sm text-gray-800 dark:text-gray-200 mt-0.5 leading-relaxed"></p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">-->
+<!--            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 shrink-0">-->
+<!--              <i class="fa-solid fa-heart"></i>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--              <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Favorite</p>-->
+<!--              <p id="contact_favorite" class="text-sm text-gray-800 dark:text-gray-200 mt-0.5"></p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">-->
+<!--            <div class="flex items-center gap-3 p-3 border border-gray-100 dark:border-gray-700 rounded-xl bg-gray-50/50 dark:bg-gray-800/50">-->
+<!--              <i class="fa-solid fa-globe text-gray-400"></i>-->
+<!--              <div class="overflow-hidden">-->
+<!--                <p class="text-[10px] font-bold text-gray-500 uppercase">Website</p>-->
+<!--                <a id="contact_website" href="#" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-600 dark:text-blue-400 hover:underline truncate block"></a>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            <div class="flex items-center gap-3 p-3 border border-gray-100 dark:border-gray-700 rounded-xl bg-gray-50/50 dark:bg-gray-800/50">-->
+<!--              <i class="fa-brands fa-linkedin text-blue-500"></i>-->
+<!--              <div class="overflow-hidden">-->
+<!--                <p class="text-[10px] font-bold text-gray-500 uppercase">LinkedIn</p>-->
+<!--                <a id="contact_linkedIn" href="#" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-600 dark:text-blue-400 hover:underline truncate block"></a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+
+<!--        <div class="p-4 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 flex justify-end">-->
+<!--          <button onclick="closeContactModal()" type="button"-->
+<!--                  class="px-6 py-2.5 text-sm font-bold text-gray-700 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-600 transition-colors shadow-sm">-->
+<!--            Close-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--  // Modern JavaScript Logic with Optional Chaining (?.)-->
+<!--  function loadContactdata(contact) {-->
+<!--      if (!contact) return;-->
+
+<!--      // Set Text Data-->
+<!--      document.getElementById('contact_name').innerText = contact.name || 'Unknown Contact';-->
+
+<!--      // Setup Email & Phone (targeting the span inside the p tag)-->
+<!--      document.querySelector('#contact_email span').innerText = contact.email || 'No Email Provided';-->
+<!--      document.querySelector('#contact_phone span').innerText = contact.phoneNumber || 'No Phone Provided';-->
+
+<!--      document.getElementById('contact_address').innerText = contact.address || 'Address not available';-->
+<!--      document.getElementById('contact_about').innerText = contact.description || 'No description added';-->
+<!--      document.getElementById('contact_favorite').innerText = contact.favorite ? 'Yes, marked as favorite' : 'Not a favorite';-->
+
+<!--      // Setup Website Link-->
+<!--      const websiteAnchor = document.getElementById('contact_website');-->
+<!--      if (contact.websiteLink?.trim()) {-->
+<!--          websiteAnchor.href = contact.websiteLink;-->
+<!--          websiteAnchor.innerText = contact.websiteLink.replace(/^https?:\/\//, ''); // Clean URL look-->
+<!--      } else {-->
+<!--          websiteAnchor.href = '#';-->
+<!--          websiteAnchor.innerText = 'Not provided';-->
+<!--          websiteAnchor.classList.remove('text-blue-600', 'dark:text-blue-400', 'hover:underline');-->
+<!--          websiteAnchor.classList.add('text-gray-500', 'cursor-default');-->
+<!--      }-->
+
+<!--      // Setup LinkedIn Link-->
+<!--      const linkedinAnchor = document.getElementById('contact_linkedIn');-->
+<!--      if (contact.linkedInLink?.trim()) {-->
+<!--          linkedinAnchor.href = contact.linkedInLink;-->
+<!--          linkedinAnchor.innerText = 'View Profile';-->
+<!--      } else {-->
+<!--          linkedinAnchor.href = '#';-->
+<!--          linkedinAnchor.innerText = 'Not provided';-->
+<!--          linkedinAnchor.classList.remove('text-blue-600', 'dark:text-blue-400', 'hover:underline');-->
+<!--          linkedinAnchor.classList.add('text-gray-500', 'cursor-default');-->
+<!--      }-->
+
+<!--      // Setup Image-->
+<!--      const imgElement = document.getElementById('contact_image');-->
+<!--      imgElement.src = contact.imageUrl?.trim() || contact.picture?.trim() || '/images/logo.png';-->
+
+<!--      // Animate Opening-->
+<!--      const modal = document.getElementById('view_contact_modal');-->
+<!--      const modalContent = document.getElementById('modal_content_card');-->
+
+<!--      modal.classList.remove('hidden');-->
+<!--      modal.classList.add('flex');-->
+
+<!--      // Small delay to allow display:flex to apply before animating opacity-->
+<!--      setTimeout(() => {-->
+<!--          modal.classList.remove('opacity-0');-->
+<!--          modalContent.classList.remove('scale-95');-->
+<!--          modalContent.classList.add('scale-100');-->
+<!--      }, 10);-->
+<!--  }-->
+
+<!--  function closeContactModal() {-->
+<!--      const modal = document.getElementById('view_contact_modal');-->
+<!--      const modalContent = document.getElementById('modal_content_card');-->
+
+<!--      // Animate Closing-->
+<!--      modal.classList.add('opacity-0');-->
+<!--      modalContent.classList.remove('scale-100');-->
+<!--      modalContent.classList.add('scale-95');-->
+
+<!--      setTimeout(() => {-->
+<!--          modal.classList.add('hidden');-->
+<!--          modal.classList.remove('flex');-->
+<!--      }, 300); // Wait for transition to finish-->
+<!--  }-->
+<!--</script>-->
+
+
+<div data-th-fragment="contact">
+  <div id="view_contact_modal" tabindex="-1" aria-hidden="true"
+       class="hidden fixed inset-0 z-50 items-center justify-center w-full h-full bg-gray-900/50 dark:bg-gray-900/80 backdrop-blur-sm transition-all duration-300 opacity-0">
+
+    <div class="relative p-4 w-full max-w-lg transform transition-all duration-300 scale-95" id="modal_content_card">
+
+      <div class="relative bg-white rounded-2xl shadow-2xl dark:bg-gray-800 border border-gray-100 dark:border-gray-700 overflow-hidden">
+
+        <button type="button" onclick="closeContactModal()"
+                class="absolute top-4 right-4 z-10 text-gray-400 bg-white/50 dark:bg-gray-800/50 hover:bg-gray-100 hover:text-gray-900 rounded-full text-sm w-8 h-8 flex justify-center items-center dark:hover:bg-gray-700 dark:hover:text-white transition-colors">
+          <i class="fa-solid fa-xmark text-lg"></i>
+          <span class="sr-only">Close modal</span>
+        </button>
+
+        <div class="flex flex-col items-center pt-8 pb-4 px-6 border-b border-gray-100 dark:border-gray-700 bg-slate-50 dark:bg-gray-800/50">
+          <div class="relative group">
+            <img id="contact_image"
+                 class="w-24 h-24 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-md transition-transform group-hover:scale-105"
+                 src=""
+                 alt="Contact avatar"
+                 onerror="this.onerror=null; this.src='/images/logo.png'">
+            <div class="absolute bottom-1 right-1 bg-green-500 rounded-full w-5 h-5 border-4 border-white dark:border-gray-800"></div>
+          </div>
+          <h3 id="contact_name" class="mt-4 text-2xl font-bold text-gray-900 dark:text-white tracking-tight text-center break-words"></h3>
+          <div class="flex flex-col items-center mt-1 space-y-1">
+            <p id="contact_email" class="text-sm font-medium text-gray-500 dark:text-gray-400 flex items-center gap-2 break-words">
+              <i class="fa-regular fa-envelope"></i> <span></span>
+            </p>
+            <p id="contact_phone" class="text-sm font-medium text-gray-500 dark:text-gray-400 flex items-center gap-2 break-words">
+              <i class="fa-solid fa-phone"></i> <span></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="p-6 space-y-4 max-h-[50vh] overflow-y-auto custom-scrollbar">
+
+          <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 shrink-0">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Address</p>
+              <p id="contact_address" class="text-sm text-gray-800 dark:text-gray-200 mt-0.5 leading-relaxed break-words"></p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 shrink-0">
+              <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">About</p>
+              <p id="contact_about" class="text-sm text-gray-800 dark:text-gray-200 mt-0.5 leading-relaxed break-words"></p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 shrink-0">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div>
+              <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Favorite</p>
+              <p id="contact_favorite" class="text-sm text-gray-800 dark:text-gray-200 mt-0.5 break-words"></p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="flex items-center gap-3 p-3 border border-gray-100 dark:border-gray-700 rounded-xl bg-gray-50/50 dark:bg-gray-800/50">
+              <i class="fa-solid fa-globe text-gray-400"></i>
+              <div class="overflow-hidden">
+                <p class="text-[10px] font-bold text-gray-500 uppercase">Website</p>
+                <a id="contact_website" href="#" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-600 dark:text-blue-400 hover:underline truncate block break-words"></a>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 p-3 border border-gray-100 dark:border-gray-700 rounded-xl bg-gray-50/50 dark:bg-gray-800/50">
+              <i class="fa-brands fa-linkedin text-blue-500"></i>
+              <div class="overflow-hidden">
+                <p class="text-[10px] font-bold text-gray-500 uppercase">LinkedIn</p>
+                <a id="contact_linkedIn" href="#" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-600 dark:text-blue-400 hover:underline truncate block break-words"></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="p-4 border-t border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 flex justify-end">
+          <button onclick="closeContactModal()" type="button"
+                  class="px-6 py-2.5 text-sm font-bold text-gray-700 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-600 transition-colors shadow-sm break-words">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Modern JavaScript Logic with Optional Chaining (?.)
+  function loadContactdata(contact) {
+      if (!contact) return;
+
+      // Set Text Data
+      document.getElementById('contact_name').innerText = contact.name || 'Unknown Contact';
+
+      // Setup Email & Phone (targeting the span inside the p tag)
+      const emailSpan = document.querySelector('#contact_email span');
+      if (emailSpan) emailSpan.innerText = contact.email || 'No Email Provided';
+      const phoneSpan = document.querySelector('#contact_phone span');
+      if (phoneSpan) phoneSpan.innerText = contact.phoneNumber || 'No Phone Provided';
+
+      document.getElementById('contact_address').innerText = contact.address || 'Address not available';
+      document.getElementById('contact_about').innerText = contact.description || 'No description added';
+      document.getElementById('contact_favorite').innerText = contact.favorite ? 'Yes, marked as favorite' : 'Not a favorite';
+
+      // Setup Website Link
+      const websiteAnchor = document.getElementById('contact_website');
+      if (contact.websiteLink?.trim()) {
+          websiteAnchor.href = contact.websiteLink;
+          websiteAnchor.innerText = contact.websiteLink.replace(/^https?:\/\//, ''); // Clean URL look
+          websiteAnchor.classList.add('text-blue-600', 'dark:text-blue-400', 'hover:underline');
+          websiteAnchor.classList.remove('text-gray-500', 'cursor-default');
+      } else {
+          websiteAnchor.href = '#';
+          websiteAnchor.innerText = 'Not provided';
+          websiteAnchor.classList.remove('text-blue-600', 'dark:text-blue-400', 'hover:underline');
+          websiteAnchor.classList.add('text-gray-500', 'cursor-default');
+      }
+
+      // Setup LinkedIn Link
+      const linkedinAnchor = document.getElementById('contact_linkedIn');
+      if (contact.linkedInLink?.trim()) {
+          linkedinAnchor.href = contact.linkedInLink;
+          linkedinAnchor.innerText = 'View Profile';
+          linkedinAnchor.classList.add('text-blue-600', 'dark:text-blue-400', 'hover:underline');
+          linkedinAnchor.classList.remove('text-gray-500', 'cursor-default');
+      } else {
+          linkedinAnchor.href = '#';
+          linkedinAnchor.innerText = 'Not provided';
+          linkedinAnchor.classList.remove('text-blue-600', 'dark:text-blue-400', 'hover:underline');
+          linkedinAnchor.classList.add('text-gray-500', 'cursor-default');
+      }
+
+      // Setup Image
+      const imgElement = document.getElementById('contact_image');
+      imgElement.src = contact.imageUrl?.trim() || contact.picture?.trim() || '/images/logo.png';
+
+      // Animate Opening
+      const modal = document.getElementById('view_contact_modal');
+      const modalContent = document.getElementById('modal_content_card');
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          modalContent.classList.remove('scale-95');
+          modalContent.classList.add('scale-100');
+      }, 10);
+  }
+
+  function closeContactModal() {
+      const modal = document.getElementById('view_contact_modal');
+      const modalContent = document.getElementById('modal_content_card');
+
+      modal.classList.add('opacity-0');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+
+      setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+      }, 300);
+  }
+</script>

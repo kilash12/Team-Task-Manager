@@ -1,0 +1,144 @@
+<!--<!DOCTYPE html>-->
+<!--<html th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">-->
+<!--<head>-->
+<!--    <title>Task Dashboard | SCM 5.0</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="content">-->
+<!--    <div th:replace="~{user/sidebar :: sidebar}"></div>-->
+<!--    <div class="sm:pl-64 pt-20 p-6">-->
+<!--        <div class="max-w-5xl mx-auto">-->
+<!--            <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Task Summary</h1>-->
+<!--            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">-->
+<!--                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center">-->
+<!--                    <h3 class="text-gray-500 dark:text-gray-400">Total Tasks</h3>-->
+<!--                    <p class="text-4xl font-bold text-gray-900 dark:text-white" id="totalTasks">0</p>-->
+<!--                </div>-->
+<!--                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center">-->
+<!--                    <h3 class="text-gray-500 dark:text-gray-400">Completed</h3>-->
+<!--                    <p class="text-4xl font-bold text-green-600 dark:text-green-400" id="completedTasks">0</p>-->
+<!--                </div>-->
+<!--                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center">-->
+<!--                    <h3 class="text-gray-500 dark:text-gray-400">Pending</h3>-->
+<!--                    <p class="text-4xl font-bold text-yellow-600 dark:text-yellow-400" id="pendingTasks">0</p>-->
+<!--                </div>-->
+<!--                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center">-->
+<!--                    <h3 class="text-gray-500 dark:text-gray-400">Overdue</h3>-->
+<!--                    <p class="text-4xl font-bold text-red-600 dark:text-red-400" id="overdueTasks">0</p>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="mt-10 bg-white dark:bg-gray-800 rounded-2xl shadow p-6">-->
+<!--                <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Your Recent Tasks</h2>-->
+<!--                <div id="recentTasksList" class="space-y-3"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script>-->
+<!--    fetch('/api/dashboard')-->
+<!--        .then(res => res.json())-->
+<!--        .then(data => {-->
+<!--            document.getElementById('totalTasks').innerText = data.totalTasks || 0;-->
+<!--            document.getElementById('completedTasks').innerText = data.completedTasks || 0;-->
+<!--            document.getElementById('pendingTasks').innerText = data.pendingTasks || 0;-->
+<!--            document.getElementById('overdueTasks').innerText = data.overdueTasks || 0;-->
+<!--        })-->
+<!--        .catch(err => console.error('Dashboard error:', err));-->
+
+<!--    fetch('/user/tasks/api/recent')-->
+<!--        .then(res => res.json())-->
+<!--        .then(tasks => {-->
+<!--            const container = document.getElementById('recentTasksList');-->
+<!--            if (tasks && tasks.length) {-->
+<!--                container.innerHTML = tasks.map(t => `-->
+<!--                    <div class="border-b dark:border-gray-700 pb-3">-->
+<!--                        <p class="font-bold text-gray-900 dark:text-white">${t.title}</p>-->
+<!--                        <p class="text-sm text-gray-600 dark:text-gray-400">Status: ${t.status} | Due: ${t.dueDate}</p>-->
+<!--                    </div>-->
+<!--                `).join('');-->
+<!--            } else {-->
+<!--                container.innerHTML = '<p class="text-gray-500 dark:text-gray-400">No tasks assigned.</p>';-->
+<!--            }-->
+<!--        });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>Task Dashboard | Team Task Manager</title>
+</head>
+<body>
+<div id="content">
+    <div th:replace="~{user/sidebar :: sidebar}"></div>
+    <div class="sm:pl-64 pt-20 p-6">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 break-words">Task Summary</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center">
+                    <h3 class="text-gray-500 dark:text-gray-400 break-words">Total Tasks</h3>
+                    <p class="text-4xl font-bold text-gray-900 dark:text-white break-words" id="totalTasks">0</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center">
+                    <h3 class="text-gray-500 dark:text-gray-400 break-words">Completed</h3>
+                    <p class="text-4xl font-bold text-green-600 dark:text-green-400 break-words" id="completedTasks">0</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center">
+                    <h3 class="text-gray-500 dark:text-gray-400 break-words">Pending</h3>
+                    <p class="text-4xl font-bold text-yellow-600 dark:text-yellow-400 break-words" id="pendingTasks">0</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow text-center">
+                    <h3 class="text-gray-500 dark:text-gray-400 break-words">Overdue</h3>
+                    <p class="text-4xl font-bold text-red-600 dark:text-red-400 break-words" id="overdueTasks">0</p>
+                </div>
+            </div>
+
+            <div class="mt-10 bg-white dark:bg-gray-800 rounded-2xl shadow p-6">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 break-words">Your Recent Tasks</h2>
+                <div id="recentTasksList" class="space-y-3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    fetch('/api/dashboard')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('totalTasks').innerText = data.totalTasks || 0;
+            document.getElementById('completedTasks').innerText = data.completedTasks || 0;
+            document.getElementById('pendingTasks').innerText = data.pendingTasks || 0;
+            document.getElementById('overdueTasks').innerText = data.overdueTasks || 0;
+        })
+        .catch(err => console.error('Dashboard error:', err));
+
+    fetch('/user/tasks/api/recent')
+        .then(res => res.json())
+        .then(tasks => {
+            const container = document.getElementById('recentTasksList');
+            if (tasks && tasks.length) {
+                container.innerHTML = tasks.map(t => `
+                    <div class="border-b dark:border-gray-700 pb-3">
+                        <p class="font-bold text-gray-900 dark:text-white break-words">${escapeHtml(t.title)}</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 break-words">Status: ${escapeHtml(t.status)} | Due: ${escapeHtml(t.dueDate)}</p>
+                    </div>
+                `).join('');
+            } else {
+                container.innerHTML = '<p class="text-gray-500 dark:text-gray-400 break-words">No tasks assigned.</p>';
+            }
+        })
+        .catch(err => console.error('Recent tasks error:', err));
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+</script>
+</body>
+</html>
