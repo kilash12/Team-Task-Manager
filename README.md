@@ -8,7 +8,7 @@
 
 > **A full‑stack project and task management system with role‑based access (Admin/Member).** Built with Spring Boot, Thymeleaf, MySQL, and Tailwind CSS.
 
-**Live Demo:** [Team Task Manager on Railway](#) *(update with your live URL)*
+**Live Demo:** [Team Task Manager on Railway](#) *(update soon)*
 
 ---
 
