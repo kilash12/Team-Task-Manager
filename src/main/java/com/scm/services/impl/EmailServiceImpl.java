@@ -21,7 +21,7 @@ public class EmailServiceImpl implements EmailService {
 
     private Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
 
-    @Autowired
+    @Autowired(required = false)
     private JavaMailSender eMailSender;
 
     @Value("${spring.mail.username}")
@@ -30,6 +30,10 @@ public class EmailServiceImpl implements EmailService {
     @Override
     @Async
     public void sendEmail(String to, String subject, String body) {
+        if (eMailSender == null) {
+            logger.warn("Email service not configured. Skipping email.");
+            return;
+        }
         logger.info("Preparing to send plain text email to: {}", to);
         MimeMessage mimeMessage = eMailSender.createMimeMessage();
         try {
