@@ -3,6 +3,8 @@ package com.scm.services.impl;
 import java.io.IOException;
 
 import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,7 +17,9 @@ import com.scm.services.ImageService;
 @Service
 public class ImageServiceImpl implements ImageService {
 
-    private Cloudinary cloudinary;
+//    private Cloudinary cloudinary;
+@Autowired(required = false)
+private Cloudinary cloudinary;
 
     public ImageServiceImpl(Cloudinary cloudinary) {
         this.cloudinary = cloudinary;
