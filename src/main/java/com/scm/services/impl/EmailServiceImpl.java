@@ -24,8 +24,10 @@ public class EmailServiceImpl implements EmailService {
     @Autowired(required = false)
     private JavaMailSender eMailSender;
 
-    @Value("${spring.mail.username}")
-    private String domainName;
+//    @Value("${spring.mail.username}")
+//    private String domainName;
+@Value("${spring.mail.username:dummy@gmail.com}")
+private String domainName;
 
     @Override
     @Async
