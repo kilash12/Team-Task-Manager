@@ -269,14 +269,11 @@
 </div>
 
 <script>
-  // Modern JavaScript Logic with Optional Chaining (?.)
   function loadContactdata(contact) {
       if (!contact) return;
 
-      // Set Text Data
       document.getElementById('contact_name').innerText = contact.name || 'Unknown Contact';
 
-      // Setup Email & Phone (targeting the span inside the p tag)
       const emailSpan = document.querySelector('#contact_email span');
       if (emailSpan) emailSpan.innerText = contact.email || 'No Email Provided';
       const phoneSpan = document.querySelector('#contact_phone span');
@@ -286,11 +283,10 @@
       document.getElementById('contact_about').innerText = contact.description || 'No description added';
       document.getElementById('contact_favorite').innerText = contact.favorite ? 'Yes, marked as favorite' : 'Not a favorite';
 
-      // Setup Website Link
       const websiteAnchor = document.getElementById('contact_website');
       if (contact.websiteLink?.trim()) {
           websiteAnchor.href = contact.websiteLink;
-          websiteAnchor.innerText = contact.websiteLink.replace(/^https?:\/\//, ''); // Clean URL look
+          websiteAnchor.innerText = contact.websiteLink.replace(/^https?:\/\//, '');
           websiteAnchor.classList.add('text-blue-600', 'dark:text-blue-400', 'hover:underline');
           websiteAnchor.classList.remove('text-gray-500', 'cursor-default');
       } else {
@@ -300,7 +296,6 @@
           websiteAnchor.classList.add('text-gray-500', 'cursor-default');
       }
 
-      // Setup LinkedIn Link
       const linkedinAnchor = document.getElementById('contact_linkedIn');
       if (contact.linkedInLink?.trim()) {
           linkedinAnchor.href = contact.linkedInLink;
@@ -314,17 +309,13 @@
           linkedinAnchor.classList.add('text-gray-500', 'cursor-default');
       }
 
-      // Setup Image
       const imgElement = document.getElementById('contact_image');
       imgElement.src = contact.imageUrl?.trim() || contact.picture?.trim() || '/images/logo.png';
 
-      // Animate Opening
       const modal = document.getElementById('view_contact_modal');
       const modalContent = document.getElementById('modal_content_card');
-
       modal.classList.remove('hidden');
       modal.classList.add('flex');
-
       setTimeout(() => {
           modal.classList.remove('opacity-0');
           modalContent.classList.remove('scale-95');
@@ -335,11 +326,9 @@
   function closeContactModal() {
       const modal = document.getElementById('view_contact_modal');
       const modalContent = document.getElementById('modal_content_card');
-
       modal.classList.add('opacity-0');
       modalContent.classList.remove('scale-100');
       modalContent.classList.add('scale-95');
-
       setTimeout(() => {
           modal.classList.add('hidden');
           modal.classList.remove('flex');

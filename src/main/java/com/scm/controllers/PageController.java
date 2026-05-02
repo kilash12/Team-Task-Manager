@@ -35,9 +35,9 @@ public class PageController {
     @RequestMapping("/home")
     public String home(Model model) {
         System.out.println("Home page handler");
-        model.addAttribute("name", "Substring Technologies");
-        model.addAttribute("youtubeChannel", "Learn Code With Durgesh");
-        model.addAttribute("githubRepo", "https://github.com/learncodewithdurgesh/");
+        model.addAttribute("name", "Apna Nname ");
+        model.addAttribute("Self Website", "Learn Code With KAilash");
+        model.addAttribute("githubRepo", "https://github.com/kilash12");
         return "home";
     }
 
@@ -105,7 +105,7 @@ public class PageController {
         user.setAbout(userForm.getAbout());
         user.setPhoneNumber(userForm.getPhoneNumber());
         user.setEnabled(true);  // Set to true by default for now (or after email verification if configured)
-        user.setProfilePic("https://www.learncodewithdurgesh.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdurgesh_sir.35c6cb78.webp&w=1920&q=75");
+        user.setProfilePic("https://ui-avatars.com/api/?name=Kailash+Kumar&background=random");
 
         // ---- ROLE ASSIGNMENT ----
         String selectedRole = userForm.getRole();

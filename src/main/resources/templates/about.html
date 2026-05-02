@@ -152,49 +152,45 @@
 
 <!--</html>-->
 
-
 <!DOCTYPE html>
 <html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
 
 <head>
-  <title>About SCM 2.0</title>
+  <title>About | Team Task Manager</title>
 </head>
 
 <body>
 <div id="content">
 
+  <!-- Hero Section (already good) -->
   <section class="relative bg-gradient-to-br from-blue-600 via-indigo-600 to-indigo-800 text-white py-24 px-6 text-center overflow-hidden">
     <div class="absolute top-0 left-1/2 w-96 h-96 bg-white opacity-10 rounded-full mix-blend-overlay filter blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-
     <div class="relative max-w-4xl mx-auto z-10">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight drop-shadow-md">
-        About SCM 2.0
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight drop-shadow-md break-words">
+        About Team Task Manager
       </h1>
       <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto font-medium leading-relaxed break-words">
-        Smart Contact Management system built to help you organize,
-        manage and secure your contacts in the cloud.
+        A modern, cloud‑based platform to organise projects, assign tasks, and track progress with role‑based access.
       </p>
     </div>
   </section>
 
-  <section class="py-20 px-6 transition-colors">
+  <!-- Who We Are -->
+  <section class="py-20 px-6 transition-colors bg-white dark:bg-gray-900">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
 
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-bold uppercase tracking-wider mb-4">
           Who We Are
         </div>
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white leading-tight break-words">
-          Your Contacts, <br/><span class="text-blue-600 dark:text-blue-400">Perfectly Managed.</span>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800 dark:text-white leading-tight break-words">
+          Projects & Tasks, <br/><span class="text-blue-600 dark:text-blue-400">Perfectly Managed.</span>
         </h2>
-        <p class="text-gray-600 dark:text-gray-300 mb-5 text-lg leading-relaxed break-words">
-          SCM 2.0 is a modern cloud-based contact management system designed
-          for professionals, startups, and businesses who want secure,
-          organized and accessible contact storage.
+        <p class="text-gray-700 dark:text-gray-300 mb-5 text-lg leading-relaxed break-words">
+          Team Task Manager is a modern cloud‑based project management system designed for teams who need clear task assignment, progress tracking, and seamless collaboration.
         </p>
-        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed break-words">
-          We focus on simplicity, security, and scalability — ensuring your
-          contacts are always available when you need them.
+        <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed break-words">
+          We combine simplicity with powerful features – role‑based access, real‑time dashboards, and intuitive UI – to help your team stay productive.
         </p>
       </div>
 
@@ -208,47 +204,48 @@
     </div>
   </section>
 
-  <section class="py-20 px-6 border-y border-gray-100 dark:border-gray-800 transition-colors">
+  <!-- Why Choose Us -->
+  <section class="py-20 px-6 border-y border-gray-200 dark:border-gray-800 transition-colors bg-gray-50 dark:bg-gray-900">
     <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-14 text-gray-900 dark:text-white break-words">
-        Why Choose SCM 2.0?
+      <h2 class="text-3xl md:text-4xl font-bold mb-14 text-gray-800 dark:text-white break-words">
+        Why Choose Team Task Manager?
       </h2>
 
       <div class="grid md:grid-cols-3 gap-8 text-left">
 
-        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700 hover:-translate-y-1 transition-all duration-300 group">
-          <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 hover:-translate-y-1 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-cloud text-blue-600 dark:text-blue-400 text-2xl"></i>
           </div>
-          <h3 class="font-bold text-xl mb-3 text-gray-900 dark:text-white break-words">
+          <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white break-words">
             Cloud Based
           </h3>
           <p class="text-gray-600 dark:text-gray-400 leading-relaxed break-words">
-            Access your contacts anytime, anywhere from any device.
+            Access your projects and tasks from anywhere, on any device.
           </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700 hover:-translate-y-1 transition-all duration-300 group">
-          <div class="w-14 h-14 bg-green-50 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 hover:-translate-y-1 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-shield-halved text-green-600 dark:text-green-400 text-2xl"></i>
           </div>
-          <h3 class="font-bold text-xl mb-3 text-gray-900 dark:text-white break-words">
-            Secure & Private
+          <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white break-words">
+            Role‑Based Security
           </h3>
           <p class="text-gray-600 dark:text-gray-400 leading-relaxed break-words">
-            Advanced authentication and data protection.
+            Admins have full control; members focus on their assigned tasks.
           </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-700 hover:-translate-y-1 transition-all duration-300 group">
-          <div class="w-14 h-14 bg-yellow-50 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-bolt text-yellow-600 dark:text-yellow-400 text-2xl"></i>
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 hover:-translate-y-1 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-chart-line text-yellow-600 dark:text-yellow-400 text-2xl"></i>
           </div>
-          <h3 class="font-bold text-xl mb-3 text-gray-900 dark:text-white break-words">
-            Fast & Easy
+          <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white break-words">
+            Live Dashboard
           </h3>
           <p class="text-gray-600 dark:text-gray-400 leading-relaxed break-words">
-            Simple interface with powerful management tools.
+            Real‑time statistics on tasks, overdue items, and team progress.
           </p>
         </div>
 
@@ -256,40 +253,40 @@
     </div>
   </section>
 
-  <section class="py-20 px-6 transition-colors">
+  <!-- Mission & Vision -->
+  <section class="py-20 px-6 transition-colors bg-white dark:bg-gray-900">
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12">
 
-      <div class="p-8 bg-blue-50/50 dark:bg-gray-800/50 rounded-3xl border border-blue-100 dark:border-gray-800">
+      <div class="p-8 bg-blue-50/80 dark:bg-gray-800 rounded-3xl border border-blue-200 dark:border-gray-700">
         <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl shadow-md mb-6">
           <i class="fa-solid fa-bullseye"></i>
         </div>
-        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white break-words">Our Mission</h3>
-        <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed break-words">
-          To simplify contact management using modern cloud technology
-          while maintaining the highest standards of security.
+        <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white break-words">Our Mission</h3>
+        <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed break-words">
+          To streamline project collaboration with intuitive tools that save time and improve transparency.
         </p>
       </div>
 
-      <div class="p-8 bg-indigo-50/50 dark:bg-gray-800/50 rounded-3xl border border-indigo-100 dark:border-gray-800">
+      <div class="p-8 bg-indigo-50/80 dark:bg-gray-800 rounded-3xl border border-indigo-200 dark:border-gray-700">
         <div class="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xl shadow-md mb-6">
           <i class="fa-solid fa-eye"></i>
         </div>
-        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white break-words">Our Vision</h3>
-        <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed break-words">
-          To become a leading smart contact management platform trusted
-          worldwide.
+        <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white break-words">Our Vision</h3>
+        <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed break-words">
+          To become the most trusted task management platform for agile teams worldwide.
         </p>
       </div>
 
     </div>
   </section>
 
+  <!-- Call to Action -->
   <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 text-center px-6 my-8 max-w-6xl mx-auto rounded-3xl shadow-2xl">
     <h2 class="text-3xl md:text-4xl font-bold mb-4 break-words">
-      Ready to Get Started?
+      Ready to Boost Your Team's Productivity?
     </h2>
     <p class="mb-8 text-blue-100 text-lg break-words">
-      Join SCM 2.0 today and manage your contacts smarter.
+      Join Team Task Manager today and experience seamless project management.
     </p>
     <a th:href="@{/register}"
        class="inline-block bg-white text-blue-700 px-8 py-3.5 rounded-xl font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all shadow-lg hover:shadow-xl">
