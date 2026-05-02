@@ -22,10 +22,9 @@ public class AppConfig {
     @Bean
     public Cloudinary cloudinary() {
 
-        // 🔥 IMPORTANT FIX
         if ("dummy".equals(cloudName) || "dummy".equals(apiKey) || "dummy".equals(apiSecret)) {
             System.out.println("⚠️ Cloudinary not configured. Skipping...");
-            return null;   // ❗ ye hi crash fix karega
+            return null;
         }
 
         return new Cloudinary(
