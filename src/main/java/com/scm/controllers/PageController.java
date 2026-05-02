@@ -104,7 +104,7 @@ public class PageController {
         user.setPassword(userForm.getPassword());
         user.setAbout(userForm.getAbout());
         user.setPhoneNumber(userForm.getPhoneNumber());
-        user.setEnabled(false);  // will be enabled after email verification
+        user.setEnabled(true);  // Set to true by default for now (or after email verification if configured)
         user.setProfilePic("https://www.learncodewithdurgesh.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdurgesh_sir.35c6cb78.webp&w=1920&q=75");
 
         // ---- ROLE ASSIGNMENT ----
@@ -120,7 +120,7 @@ public class PageController {
         System.out.println("User saved with roles: " + savedUser.getRoleList());
 
         Message message = Message.builder()
-                .content("Registration Successful! Please check your email to verify your account before logging in.")
+                .content("Registration Successful! You can now login with your email and password.")
                 .type(MessageType.green)
                 .build();
         session.setAttribute("message", message);

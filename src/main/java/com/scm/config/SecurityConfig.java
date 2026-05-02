@@ -12,6 +12,8 @@ import com.scm.services.impl.SecurityCustomUserDetailService;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+
 @Configuration
 public class SecurityConfig {
 
@@ -40,11 +42,20 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(authorize -> {
+            // Permit public endpoints
+            authorize.requestMatchers("/", "/home", "/about", "/services", "/contact", "/login", "/register", "/do-register", "/auth/**", "/error").permitAll();
+            
+            // Resource endpoints
+            authorize.requestMatchers("/css/**", "/js/**", "/images/**", "/lib/**", "/favicon.ico").permitAll();
+
+            // Protected endpoints
             authorize.requestMatchers("/user/admin/**").hasRole("ADMIN");
             authorize.requestMatchers("/user/member/**").hasAnyRole("ADMIN", "MEMBER");
             authorize.requestMatchers("/user/projects/**", "/user/tasks/**", "/api/dashboard/**").authenticated();
             authorize.requestMatchers("/user/**").authenticated();
-            authorize.anyRequest().permitAll();
+            
+            // Any other request must be authenticated
+            authorize.anyRequest().authenticated();
         });
 
         httpSecurity.formLogin(formLogin -> {
@@ -54,18 +65,22 @@ public class SecurityConfig {
             formLogin.usernameParameter("email");
             formLogin.passwordParameter("password");
             formLogin.failureHandler(authFailureHandler);
+            formLogin.permitAll();
         });
 
         httpSecurity.logout(logoutForm -> {
             logoutForm.logoutUrl("/do-logout");
             logoutForm.logoutRequestMatcher(new AntPathRequestMatcher("/do-logout", "GET"));
             logoutForm.logoutSuccessUrl("/login?logout=true");
+            logoutForm.permitAll();
         });
 
         httpSecurity.oauth2Login(oauth -> {
             oauth.loginPage("/login");
             oauth.successHandler(handler);
         });
+
+        httpSecurity.csrf(csrf -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()));
 
         return httpSecurity.build();
     }
